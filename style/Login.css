@@ -1,0 +1,12 @@
+.container-form-login{
+    padding: 15px 0px 20px 0px;
+    font-size: 1.5rem;
+    background: rgb(0, 206, 209);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 650px;
+    border-radius: 20px;
+}
