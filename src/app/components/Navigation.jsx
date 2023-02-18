@@ -9,7 +9,7 @@ const links = [{
   route: '/'
 }, {
   label: 'Login',
-  route: '/Login'
+  route: '/login'
 }, {
   label: 'Register',
   route: '/register'

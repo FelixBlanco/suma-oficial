@@ -1,3 +1,9 @@
 {
-    "extends": ["./node_modules/standard/esLintrc.json","next/core-web-vitals"]
+    "extends": ["./node_modules/standard/esLintrc.json","next/core-web-vitals", "next"],
+    "globals": {
+        "React": "readonly"
+      },
+      "rules": {
+        "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
+      }
 }

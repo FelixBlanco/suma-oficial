@@ -1,4 +1,5 @@
-export default function Head () {
+
+export default function Heads () {
   return (
     <>
       <title>suma-oficial</title>

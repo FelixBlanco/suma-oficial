@@ -1,5 +1,5 @@
-'use client'
-import 'style/Login.css'
+
+import 'style/Home.css'
 
 export default function Home () {
   return (
