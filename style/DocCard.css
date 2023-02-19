@@ -1,0 +1,14 @@
+.doctor-cards-container{
+    margin: 13px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+/* .doctor-cart{
+    width: 360px;
+    margin-bottom: 15px;
+} */

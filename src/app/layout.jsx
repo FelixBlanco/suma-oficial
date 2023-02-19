@@ -1,5 +1,5 @@
 import './global.css'
-import React, { ReactFragment } from 'react'
+import React from 'react'
 
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css'

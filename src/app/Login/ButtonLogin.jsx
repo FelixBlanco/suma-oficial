@@ -1,4 +1,4 @@
-'use cliente'
+'use client'
 
 import Button from 'react-bootstrap/Button'
 // Crear el envio de la informacion
