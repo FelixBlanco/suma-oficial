@@ -3,12 +3,14 @@
 import 'style/Home.css'
 import 'style/DocCard.css'
 import DocCard from './doctores/[id]/DocCard'
+import { Filtros } from './components/FiltrosDoc'
+import 'style/FiltrosDoc.css'
 
 export default function Home () {
   return (
     <main className=''>
-      <div className=''>
-        <h1>Hola, Estas en Home</h1>
+      <div className='main-container'>
+        <Filtros />
         <div className='doctor-cards-container'>
           <DocCard />
           <DocCard />

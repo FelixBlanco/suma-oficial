@@ -1,16 +1,19 @@
 import DocCard from './[id]/DocCard'
+import 'style/DocCard.css'
 
 export default function Doctor () {
   return (
     <>
-      <DocCard />
-      <DocCard />
-      <DocCard />
-      <DocCard />
-      <DocCard />
-      <DocCard />
-      <DocCard />
-      <DocCard />
+      <div className='doctor-cards-container'>
+        <DocCard />
+        <DocCard />
+        <DocCard />
+        <DocCard />
+        <DocCard />
+        <DocCard />
+        <DocCard />
+        <DocCard />
+      </div>
     </>
   )
 }
