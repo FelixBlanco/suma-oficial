@@ -1,7 +1,7 @@
-import DocCard from './[id]/DocCard'
+import DocCard from '../components/DocCard'
 import 'style/DocCard.css'
 
-export default function Doctor () {
+export default function Doctors () {
   return (
     <>
       <div className='doctor-cards-container'>

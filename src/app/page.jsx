@@ -2,7 +2,7 @@
 // import { Col, Row, Card, Button } from 'react-bootstrap'
 import 'style/Home.css'
 import 'style/DocCard.css'
-import DocCard from './doctores/[id]/DocCard'
+import DocCard from './components/DocCard'
 import { Filtros } from './components/FiltrosDoc'
 import 'style/FiltrosDoc.css'
 

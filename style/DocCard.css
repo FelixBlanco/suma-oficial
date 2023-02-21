@@ -7,6 +7,10 @@
 }
 
 .doctor-cart{
-    width: 300px;
+    display: flex;
+    width: 410px;
     margin: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 10px;
 }
