@@ -13,6 +13,20 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    public function registrarme(Request $request){
+        $u = new User([
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'password'  =>  Hash::make('password'),            
+        ]);
+        
+        $u->save();
+
+        return response()->json([
+            'users' => $u
+        ],200);
+    }
+
     public function store(Request $request){
 
 

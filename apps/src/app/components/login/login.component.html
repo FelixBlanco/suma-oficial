@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <div>
+    <label for="">Correo electronico</label>
+    <input type="email" formControlName="email">
+  </div>
+  <div>
+    <label for="">Contrasena</label>
+    <input type="password" formControlName="password">
+  </div>
+  <div>
+    <button class="btn btn-success" (click)="Login()">Registrame</button>
+  </div>
+</form>

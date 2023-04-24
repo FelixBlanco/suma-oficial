@@ -1,0 +1,12 @@
+<ul>
+  <li>
+    <a [routerLink]="['/']" routerLinkActive="router-link-active" >Inicio</a>
+  </li>
+  <li>
+    <a [routerLink]="['/']" routerLinkActive="router-link-active" >{{user.name}}</a>
+  </li>
+  <li>
+    <a href="javascript:void(0)" (click)="closeSesion()" >Salir</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
