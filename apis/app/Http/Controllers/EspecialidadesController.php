@@ -17,6 +17,9 @@ class EspecialidadesController extends Controller
 
     public function userEspecialid(Request $request){
         $e = UserEspecialidad::where('user_id',$request->user()->id)->get();
+        $e->each(function($e){
+            $e->especialidad = Especialidad::find($e->especialidad_id);
+        });
         return response()->json([
             'especialidades'=> $e
         ],200);

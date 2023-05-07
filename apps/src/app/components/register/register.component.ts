@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent implements OnInit {
   
   form : FormGroup
+  rol : any = null;
 
   constructor(
     private fb : FormBuilder,
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
       name : [''],
       email : [''],
       password : [''],
-      rol_id : ['4'] // cliente
+      rol_id : ['']
     })
   }
 
@@ -40,4 +41,8 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  selectRol(e:any){
+    this.rol = e.target.value
+    this.form.controls['rol_id'].setValue(this.rol)
+  }
 }

@@ -1,2 +1,28 @@
-<p>home-sistema works!</p>
-<app-especialidades-sistema></app-especialidades-sistema>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <app-especialidades-sistema></app-especialidades-sistema>
+    </div>
+    <div class="col-md-4">
+      <app-pagos></app-pagos>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <div class="shadow bg-white p-3">
+        <h3>Servicios</h3>
+        <div class="mb-3">
+          <label for="">Ingrese descripcion</label>
+          <textarea class="form-control" formControlName="descripcion" cols="30" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="">Ingrese monto</label>
+          <input type="text" class="form-control" formControlName="monto">
+        </div>
+        <div class="mb-3 d-grid">
+          <button class="btn btn-success">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

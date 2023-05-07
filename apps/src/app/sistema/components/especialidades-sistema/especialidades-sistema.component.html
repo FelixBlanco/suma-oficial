@@ -1,29 +1,30 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Mis especialidades</h2>
-      <form [formGroup]="form">
-        <div>
-          <label for="">Especialidad</label>
-          <select (change)="selectEspecialidad($event)">
-            <option 
-              *ngFor="let especialidad of especialidades" 
-              [value]="especialidad.id"
-            >
-              {{especialidad.nombre}}
-            </option>
-          </select>
-        </div>
-        <div>
-          <button (click)="storeEspecialidades()">Guardar</button>
-        </div>
-      </form>
+<div class="shadow bg-white p-4">
+  <h3 class="p-2">AGREGAR ESPECIALIDADES</h3>
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label for="">Seleccione especialidad</label>
+      <select (change)="selectEspecialidad($event)" class="form-control">
+        <option value="">- Seleccionar especialidad -</option>
+        <option 
+          *ngFor="let especialidad of especialidades" 
+          [value]="especialidad.id"
+        >
+          {{especialidad.nombre}}
+        </option>
+      </select>
     </div>
-    <div class="col-md-4">
-      <h2>Mis Especialidades</h2>
-      <ul>
-        <li *ngFor="let mis_especialidad of mis_especialidades">{{mis_especialidad.especialidad_id}}</li>
-      </ul>
+    <div class="mb-3 d-grid">
+      <button class="btn btn-success" (click)="storeEspecialidades()">Agregar</button>
     </div>
+  </form>
+
+  <hr>
+  <div class="mt-2" *ngIf="mis_especialidades.length != 0">
+    <h3>MIS ESPECIALIDADES</h3>
+    <ul class="nav">
+      <li *ngFor="let mis_especialidad of mis_especialidades" class="nav-item">
+        <p class="badge bg-success">{{mis_especialidad.especialidad.nombre}} </p>
+      </li>
+    </ul>
   </div>
 </div>

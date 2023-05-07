@@ -6,12 +6,16 @@ import { BodySistemaComponent } from './components/body-sistema/body-sistema.com
 import { HomeSistemaComponent } from './components/home-sistema/home-sistema.component';
 import { EspecialidadesSistemaComponent } from './components/especialidades-sistema/especialidades-sistema.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { PagosComponent } from './components/pagos/pagos.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
 
 @NgModule({
   declarations: [
     BodySistemaComponent,
     HomeSistemaComponent,
-    EspecialidadesSistemaComponent
+    EspecialidadesSistemaComponent,
+    PagosComponent,
+    ServiciosComponent
   ],
   imports: [
     CommonModule,
