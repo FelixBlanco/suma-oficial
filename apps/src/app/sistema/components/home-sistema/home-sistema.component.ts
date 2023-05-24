@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home-sistema',
@@ -8,27 +7,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class HomeSistemaComponent implements OnInit {
 
-  form : FormGroup
 
-  constructor(
-    private fb : FormBuilder
-  ) { 
-    this.form = this.fb.group({
-      descripcion : [''],
-      monto : ['']
-    })
-  }
 
-  ngOnInit(): void {
+  constructor(){
 
   }
 
-  getServicios(){
-
-  }
-
-  store(){
-    
+  ngOnInit(): void {    
   }
 
 }

@@ -1,1 +1,11 @@
-<p>landing works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <app-card-servicios 
+        *ngFor="let servicio of servicios"
+        [servicio]="servicio"
+      ></app-card-servicios>
+    </div>
+  </div>
+</div>
+

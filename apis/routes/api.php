@@ -21,6 +21,11 @@ Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function () {
         Route::post('register','registrarme');
     });
 
+    Route::controller(ServiciosController::class)->group(function(){
+        Route::get('servicios-publicos','publicos');
+        Route::get('servicios-publicos-show/{id}','publicosShow');
+    });
+
     Route::group(['middleware' => 'auth:api' ], function() {
         
         Route::controller(AuthController::class)->group(function(){
@@ -34,9 +39,12 @@ Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function () {
             Route::post('especialidades-user','store');
         });
 
-        Route::controller(ServiciosController::class)->group(function(){
+        Route::controller(ServiciosController::class)->group(function(){            
             Route::get('mis-servicios','misServicios');
             Route::post('store-servicios','store');
+            Route::post('upgrade-servicios','upgrade');
+            Route::get('destroy-servicios/{id}','destroy');
+            
         });
         
     });

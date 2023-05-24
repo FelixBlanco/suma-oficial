@@ -1,1 +1,29 @@
-<p>servicios works!</p>
+<div class="row mt-3">
+  <div class="col-md-4">
+    <div class="shadow bg-white p-3">
+      <h3>Servicios</h3>
+      <form [formGroup]="form">
+        <div class="mb-3">
+          <label for="">Ingrese descripcion</label>
+          <textarea class="form-control" formControlName="descripcion" cols="30" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="">Ingrese monto</label>
+          <input type="text" class="form-control" formControlName="monto">
+        </div>
+        <div class="mb-3 d-grid">
+          <button class="btn btn-success" (click)="store()" *ngIf="!isEdit">Agregar</button>
+          <button class="btn btn-success" (click)="upgrade()" *ngIf="isEdit">Editar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div *ngFor="let servicio of servicios" class="shadow bg-white p-2">
+      <p>Descripcion servicio : {{servicio.descripcion}}</p>
+      <p>Monto : {{servicio.monto}}</p>
+      <button class="btn btn-primary" (click)="edit(servicio)">Editar</button>
+      <button class="btn btn-danger" (click)="destroy(servicio.id)">Eliminar</button>
+    </div>
+  </div>
+</div>

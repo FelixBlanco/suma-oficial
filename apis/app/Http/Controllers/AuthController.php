@@ -10,10 +10,12 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Models\Rol;
 use App\Models\User;
+use App\Models\UsersRol;
 
 class AuthController extends Controller
 {
     public function registrarme(Request $request){
+        
         $u = new User([
             'name'      => $request->name,
             'email'     => $request->email,
@@ -21,6 +23,12 @@ class AuthController extends Controller
         ]);
         
         $u->save();
+
+        $u_r = new UsersRol([
+            'user_id' => $u->id,
+            'rol_id' => $request->rol_id
+        ]);
+        $u_r->save();
 
         return response()->json([
             'users' => $u
