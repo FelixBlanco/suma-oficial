@@ -11,17 +11,19 @@
     <div class="col-md-4">
       <div class="shadow bg-white p-3">
         <h3>Servicios</h3>
-        <div class="mb-3">
-          <label for="">Ingrese descripcion</label>
-          <textarea class="form-control" formControlName="descripcion" cols="30" rows="10"></textarea>
-        </div>
-        <div class="mb-3">
-          <label for="">Ingrese monto</label>
-          <input type="text" class="form-control" formControlName="monto">
-        </div>
-        <div class="mb-3 d-grid">
-          <button class="btn btn-success">Agregar</button>
-        </div>
+        <form [formGroup]="form">
+          <div class="mb-3">
+            <label for="">Ingrese descripcion</label>
+            <textarea class="form-control" formControlName="descripcion" cols="30" rows="10"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="">Ingrese monto</label>
+            <input type="text" class="form-control" formControlName="monto">
+          </div>
+          <div class="mb-3 d-grid">
+            <button class="btn btn-success" (click)="store()">Agregar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

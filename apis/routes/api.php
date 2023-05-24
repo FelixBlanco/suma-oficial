@@ -34,5 +34,10 @@ Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function () {
             Route::post('especialidades-user','store');
         });
 
+        Route::controller(ServiciosController::class)->group(function(){
+            Route::get('mis-servicios','misServicios');
+            Route::post('store-servicios','store');
+        });
+        
     });
 });
