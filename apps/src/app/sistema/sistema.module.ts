@@ -8,6 +8,7 @@ import { EspecialidadesSistemaComponent } from './components/especialidades-sist
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { PagosComponent } from './components/pagos/pagos.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
+import { MisSolicitudesCitasComponent } from './components/mis-solicitudes-citas/mis-solicitudes-citas.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
     HomeSistemaComponent,
     EspecialidadesSistemaComponent,
     PagosComponent,
-    ServiciosComponent
+    ServiciosComponent,
+    MisSolicitudesCitasComponent
   ],
   imports: [
     CommonModule,

@@ -22,8 +22,7 @@ export class CardServiciosShowComponent implements OnInit {
     this.getServicios()
   }
 
-  getServicios(){
-    console.log(this.params.id)
+  getServicios(){    
     this._servicios.publicServiciosShow(this.params.id).subscribe((resp:any) => {
       this.servicio = resp.servicio
     })

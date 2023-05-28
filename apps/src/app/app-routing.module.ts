@@ -14,12 +14,12 @@ const routes: Routes = [
       { path : '', component : LandingComponent },
       { path : 'login', component : LoginComponent },
       { path : 'register', component : RegisterComponent },
-      { path : 's/:id', component : CardServiciosShowComponent }
+      { path : 's/:id', component : CardServiciosShowComponent },
+      {      
+        path : 's',
+        loadChildren : () => import("./sistema/sistema.module").then(m => m.SistemaModule)
+      }
     ]
-  },
-  {      
-    path : 's',
-    loadChildren : () => import("./sistema/sistema.module").then(m => m.SistemaModule)
   }
 ];
 

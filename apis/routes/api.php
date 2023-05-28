@@ -43,8 +43,12 @@ Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function () {
             Route::get('mis-servicios','misServicios');
             Route::post('store-servicios','store');
             Route::post('upgrade-servicios','upgrade');
-            Route::get('destroy-servicios/{id}','destroy');
-            
+            Route::get('destroy-servicios/{id}','destroy');            
+        });
+
+        Route::controller(SolicitudesController::class)->group(function(){
+            Route::post('store-cita','store');
+            Route::get('mis-solicitudes-citas','misSolicitudes');
         });
         
     });
