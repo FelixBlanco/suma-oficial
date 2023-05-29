@@ -1,23 +1,22 @@
-<div class="container">
-  <div class="row justify-content-center">
+<div class="container mt-2">
+  <div class="row justify-content-center ">
     <div class="col-md-8">
-      <div class="shadow bg-white p-2 rounded">        
-        <p>{{servicio.descripcion}}</p>
-        <p>{{servicio.monto}}</p>
-        <p>{{servicio.user_id}}</p>        
+      <div class="shadow bg-white p-4 rounded card-servicios">        
+        <h4 class="text-end">{{servicio.monto}} Bs</h4>
+        <p>{{servicio.descripcion}}</p>    
       </div>
     </div>
     <div class="col-md-4">
-      <div class="shadow bg-white p-3 rounded">
-        <h3>Agendar cita</h3>
-        <ul> <b>Pasos para agendar</b>
-          <li>Selecciona el los dias que tienes disponibles</li>
-          <li>Espera la confirmacion del doctor o doctora</li>
-          <li>Confirma la asistencia y listo.</li>
-        </ul>
-
-        <app-form-solicitudes [servicio_id]="this.params.id"></app-form-solicitudes>
+      <div class="shadow bg-white p-4 rounded">
+        <img src="https://oscarorjedaloayzaoftalmologopediatra.com/wp-content/uploads/2017/02/doctor-victor.jpg" width="200" class="img-fluid mx-auto d-block"  alt="">
+        <h3 class="text-center p-2">
+          {{user?.name}}
+        </h3>
       </div>
+      <app-form-solicitudes 
+        [servicio_id]="this.params.id"
+        [userId]="user.id"
+      ></app-form-solicitudes>
     </div>
   </div>
 </div>

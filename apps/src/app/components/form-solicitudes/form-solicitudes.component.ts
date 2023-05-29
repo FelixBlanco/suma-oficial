@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 import { SolicitudesService } from 'src/app/services/solicitudes.service';
 
 declare var $:any
@@ -12,11 +13,16 @@ declare var $:any
 export class FormSolicitudesComponent implements OnInit {
 
   @Input()servicio_id : any = null
+  @Input() userId : any = null;
+
   form : FormGroup
-  
+  isLogin : boolean = false;
+  isMismoProfesional : boolean = false;
+
   constructor(
     private fb:FormBuilder,
-    private _solicitudes : SolicitudesService
+    private _solicitudes : SolicitudesService,
+    private _auth : AuthService
   ) { 
     this.form = this.fb.group({
       fecha : [''],
@@ -25,7 +31,15 @@ export class FormSolicitudesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getUser()
+  }
 
+  getUser(){
+    this._auth.user().subscribe((resp:any) => {
+      this.isLogin = true
+      console.log(resp)
+      this.isMismoProfesional = (resp.id == this.userId)? true : false 
+    },(error:any) => this.isLogin = false )
   }
 
   setDate(e:any){

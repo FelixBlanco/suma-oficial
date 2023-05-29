@@ -12,6 +12,8 @@ import { BodyComponent } from './components/body/body.component';
 import { CardServiciosComponent } from './components/card-servicios/card-servicios.component';
 import { CardServiciosShowComponent } from './components/card-servicios-show/card-servicios-show.component';
 import { FormSolicitudesComponent } from './components/form-solicitudes/form-solicitudes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,15 @@ import { FormSolicitudesComponent } from './components/form-solicitudes/form-sol
     BodyComponent,
     CardServiciosComponent,
     CardServiciosShowComponent,
-    FormSolicitudesComponent
+    FormSolicitudesComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,5 +14,9 @@ class Solicitud extends Model
         'servicio_id',
         'user_id',
         'is_concretada',
+        'pt_cliente',
+        'pt_servicio',
+        'pt_paciente',
+        'solicitudes_estado_id'
     ];
 }

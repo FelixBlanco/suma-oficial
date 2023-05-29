@@ -5,9 +5,8 @@
         <h2>INICIAR SESION</h2>
         <form [formGroup]="form">
           <div class="mb-3">
-            <label for="">?Como te quieres registrar?</label>
             <select class="form-control" (change)="selectRol($event)">
-              <option value=""></option>
+              <option value="">- Seleccionar tipo de usuario - </option>
               <option value="2">Usuario</option>
               <option value="3">Referido</option>
               <option value="4">Profesional</option>
@@ -26,7 +25,7 @@
             <input type="password" class="form-control" formControlName="password">
           </div>
           <div class="mb-3 d-grid">
-            <button class="btn btn-success" (click)="register()">Iniciar sesion</button>
+            <button class="btn btn-success" (click)="register()">Registrarme</button>
           </div>
         </form>
       </div>

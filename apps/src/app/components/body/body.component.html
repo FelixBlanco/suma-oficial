@@ -13,10 +13,25 @@
           <a [routerLink]="['/login']" class="nav-link" routerLinkActive="router-link-active" >Login</a>
         </li>
         <li class="nav-item" *ngIf="!isLogin">
-          <a [routerLink]="['/register']" class="nav-link" routerLinkActive="router-link-active" >registro</a>
+          <a [routerLink]="['/register']" class="nav-link" routerLinkActive="router-link-active" >Registro</a>
         </li>
+        <li class="nav-item" *ngIf="isLogin && user.rol_id == 4">
+          <a [routerLink]="['a/servicios']" class="nav-link" routerLinkActive="router-link-active" >Servicios</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogin && user.rol_id == 4">
+          <a [routerLink]="['a/citas']" class="nav-link" routerLinkActive="router-link-active" >Citas</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogin && user.rol_id == 4">
+          <a [routerLink]="['a/especialidades']" class="nav-link" routerLinkActive="router-link-active" >Especialidad</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogin && user.rol_id == 4">
+          <a [routerLink]="['a/pagos']" class="nav-link" routerLinkActive="router-link-active" >Pagos</a>
+        </li>
+      </ul>
+      
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">        
         <li class="nav-item" *ngIf="isLogin">
-          <a [routerLink]="['/s']" class="nav-link" routerLinkActive="nav-active" >
+          <a [routerLink]="['perfil']" class="nav-link" routerLinkActive="nav-active" >
             <img src="./../../../../assets/icons/doctor.png" width="20" alt="">
             {{user.name}}
           </a>

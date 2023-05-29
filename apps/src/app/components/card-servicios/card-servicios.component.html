@@ -1,7 +1,16 @@
-<div class="shadow bg-white p-2 rounded">
+<div class="shadow bg-white p-4 rounded card-servicios">
   <a [routerLink]="['/s',servicio.id]">
-    <p>{{servicio.descripcion}}</p>
-    <p>{{servicio.monto}}</p>
-    <p>{{servicio.user_id}}</p>
+    <div class="row">
+      <div class="col-md-6">
+        <h6>
+          <img src="https://oscarorjedaloayzaoftalmologopediatra.com/wp-content/uploads/2017/02/doctor-victor.jpg" width="50"  alt="">
+          {{servicio?.user.name}}
+        </h6>
+      </div>
+      <div class="col-md-6">
+        <h5 class="text-end">{{servicio.monto}} Bs</h5>
+      </div>
+    </div>
+    <p>{{servicio.descripcion_sub}}</p>    
   </a>
 </div>

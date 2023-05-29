@@ -1,8 +1,25 @@
-<div>
-  <h2>Solicitudes</h2>
-  <div *ngFor="let solicitud of solicitudes">
-    <p>Hora {{solicitud.cita}}</p> 
-    <p>Paciente : {{solicitud.user_id}} </p>
-    <button class="btn btn-success">Confirmar cita</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div >
+        <h2>Citas pendientes</h2>
+        <div *ngFor="let solicitud of solicitudes" class="bg-white shadow mb-2 p-2 rounded">
+          <h5 class="text-center"> <b>{{solicitud.cita}}</b> <br> <small>Fecha cita</small></h5> 
+          <p><b>Paciente</b> : {{solicitud.name}} </p>
+          <p class="badge bg-warning" *ngIf="solicitud.solicitudes_estado_id == 1">Pendiente</p>
+          <p class="badge bg-primary" *ngIf="solicitud.solicitudes_estado_id == 2">Confirmado</p>
+          <p class="badge bg-success" *ngIf="solicitud.solicitudes_estado_id == 3">Concretada</p>
+          <p class="badge bg-danger" *ngIf="solicitud.solicitudes_estado_id == 4">Rechazada</p>
+          <hr>
+          <div class="text-center btn-group">
+            <button class="btn btn-primary" *ngIf="solicitud.solicitudes_estado_id == 1" (click)="confirmar(solicitud.id)">Confirmar cita</button>
+            <button class="btn btn-danger" *ngIf="solicitud.solicitudes_estado_id == 1" (click)="rechazar(solicitud.id)">Rechazar</button>
+            <button class="btn btn-success" *ngIf="solicitud.solicitudes_estado_id == 2" (click)="concretar(solicitud.id)">Concretar</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+<div>
 </div>

@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   Login(){
     this._auth.verfiLogin(this.form.value).subscribe((resp:any) => {
       localStorage.setItem('_token',resp.access_token)  
-      location.href = 's/'
+      location.href = '/'
       this.form.reset()
     })
   }

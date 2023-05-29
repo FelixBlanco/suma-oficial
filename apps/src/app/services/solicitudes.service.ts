@@ -35,4 +35,16 @@ export class SolicitudesService {
   store(data:any){
     return this.route.post(`${environment.apiHost}/api/v1/store-cita`,data, httpOptions);    
   }
+
+  confirmar(data:any){
+    return this.route.post(`${environment.apiHost}/api/v1/solicitud-confirmar`,data, httpOptions);    
+  }
+
+  rechazar(data:any){
+    return this.route.post(`${environment.apiHost}/api/v1/solicitud-rechazar`,data, httpOptions);    
+  }
+
+  concretar(data:any){
+    return this.route.post(`${environment.apiHost}/api/v1/solicitud-concretar`,data, httpOptions);    
+  }
 }

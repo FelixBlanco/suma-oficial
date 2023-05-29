@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Servicio;
+use App\Models\User;
 
 class ServiciosController extends Controller
 {
 
     public function publicos(Request $request){
         $servicios = Servicio::get();
+
+        $servicios->each(function($servicios){
+            $servicios->user = User::find($servicios->user_id);
+            $servicios->descripcion_sub = substr($servicios->descripcion,0,124);
+        });
+
         return response()->json([
             'servicios' => $servicios
         ],200);
@@ -17,8 +24,10 @@ class ServiciosController extends Controller
 
     public function publicosShow($id){
         $servicio = Servicio::find($id);
+        $user = User::find($servicio->user_id);
         return response()->json([
-            'servicio' => $servicio
+            'servicio' => $servicio,
+            'user' => $user
         ],200);
     }
 

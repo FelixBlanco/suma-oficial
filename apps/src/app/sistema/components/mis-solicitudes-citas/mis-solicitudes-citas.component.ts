@@ -24,4 +24,22 @@ export class MisSolicitudesCitasComponent implements OnInit {
     })
   }
 
+  confirmar(idSolicitud:any){
+    this._solicitudes.confirmar({solicitud_id : idSolicitud}).subscribe((resp:any) => {
+      this.misSolicitudes()
+    })
+  }
+
+  rechazar(idSolicitud:any){
+    this._solicitudes.rechazar({solicitud_id : idSolicitud}).subscribe((resp:any) => {
+      this.misSolicitudes()
+    })
+  }
+
+  concretar(idSolicitud:any){
+    this._solicitudes.concretar({solicitud_id : idSolicitud}).subscribe((resp:any) => {
+      this.misSolicitudes()
+    })
+  }
+
 }

@@ -49,6 +49,9 @@ Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function () {
         Route::controller(SolicitudesController::class)->group(function(){
             Route::post('store-cita','store');
             Route::get('mis-solicitudes-citas','misSolicitudes');
+            Route::post('solicitud-confirmar','confirmar');
+            Route::post('solicitud-rechazar','rechazar');
+            Route::post('solicitud-concretar','concretar');
         });
         
     });

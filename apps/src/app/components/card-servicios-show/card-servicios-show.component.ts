@@ -11,6 +11,7 @@ export class CardServiciosShowComponent implements OnInit {
 
   servicio : any = []
   params : any = []
+  user : any = []
 
   constructor(
     private Route: ActivatedRoute,
@@ -25,6 +26,7 @@ export class CardServiciosShowComponent implements OnInit {
   getServicios(){    
     this._servicios.publicServiciosShow(this.params.id).subscribe((resp:any) => {
       this.servicio = resp.servicio
+      this.user = resp.user
     })
   }
 

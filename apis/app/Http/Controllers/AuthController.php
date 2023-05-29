@@ -159,7 +159,9 @@ class AuthController extends Controller
     }
 
     public function user(Request $request){            
-        $user = $request->user();        
+        $user = $request->user();    
+        $rol = UsersRol::where('user_id',$user->id)->first();
+        $user->rol_id = $rol->rol_id;
         return response()->json($user);
     }
 }
