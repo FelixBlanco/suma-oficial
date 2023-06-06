@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { SolicitudesService } from 'src/app/services/solicitudes.service';
 
 @Component({
@@ -9,9 +10,10 @@ import { SolicitudesService } from 'src/app/services/solicitudes.service';
 export class MisSolicitudesCitasComponent implements OnInit {
 
   solicitudes : any = []
+  rolId : any = null
 
   constructor(
-    private _solicitudes : SolicitudesService
+    private _solicitudes : SolicitudesService    
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +23,7 @@ export class MisSolicitudesCitasComponent implements OnInit {
   misSolicitudes(){
     this._solicitudes.misSolicitudesCitas().subscribe((resp:any) => {
       this.solicitudes = resp.solicitudes
+      this.rolId = resp.rol_id      
     })
   }
 

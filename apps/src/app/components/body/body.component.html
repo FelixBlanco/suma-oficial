@@ -18,7 +18,7 @@
         <li class="nav-item" *ngIf="isLogin && user.rol_id == 4">
           <a [routerLink]="['a/servicios']" class="nav-link" routerLinkActive="router-link-active" >Servicios</a>
         </li>
-        <li class="nav-item" *ngIf="isLogin && user.rol_id == 4">
+        <li class="nav-item" *ngIf="isLogin && user.rol_id == 4 || user.rol_id == 2">
           <a [routerLink]="['a/citas']" class="nav-link" routerLinkActive="router-link-active" >Citas</a>
         </li>
         <li class="nav-item" *ngIf="isLogin && user.rol_id == 4">

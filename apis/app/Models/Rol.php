@@ -9,5 +9,7 @@ class Rol extends Model
 {
     use HasFactory;
 
+    // 'Admin','Usuario','Referidos','Clientes'
+    
     protected $fillable = ['rol'];
 }

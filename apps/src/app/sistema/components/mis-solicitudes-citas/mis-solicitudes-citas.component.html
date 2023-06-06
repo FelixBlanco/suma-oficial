@@ -6,12 +6,14 @@
         <div *ngFor="let solicitud of solicitudes" class="bg-white shadow mb-2 p-2 rounded">
           <h5 class="text-center"> <b>{{solicitud.cita}}</b> <br> <small>Fecha cita</small></h5> 
           <p><b>Paciente</b> : {{solicitud.name}} </p>
+
           <p class="badge bg-warning" *ngIf="solicitud.solicitudes_estado_id == 1">Pendiente</p>
           <p class="badge bg-primary" *ngIf="solicitud.solicitudes_estado_id == 2">Confirmado</p>
           <p class="badge bg-success" *ngIf="solicitud.solicitudes_estado_id == 3">Concretada</p>
-          <p class="badge bg-danger" *ngIf="solicitud.solicitudes_estado_id == 4">Rechazada</p>
-          <hr>
-          <div class="text-center btn-group">
+          <p class="badge bg-danger" *ngIf="solicitud.solicitudes_estado_id == 4">Rechazada</p>          
+          
+          <div class="text-center" *ngIf="rolId == 4">
+            <hr>
             <button class="btn btn-primary" *ngIf="solicitud.solicitudes_estado_id == 1" (click)="confirmar(solicitud.id)">Confirmar cita</button>
             <button class="btn btn-danger" *ngIf="solicitud.solicitudes_estado_id == 1" (click)="rechazar(solicitud.id)">Rechazar</button>
             <button class="btn btn-success" *ngIf="solicitud.solicitudes_estado_id == 2" (click)="concretar(solicitud.id)">Concretar</button>

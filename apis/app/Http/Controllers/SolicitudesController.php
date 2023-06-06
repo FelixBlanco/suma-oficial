@@ -5,19 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Solicitud;
 use App\Models\SolicitudesFecha;
+use App\Models\UsersRol;
 
 class SolicitudesController extends Controller
 {
 
     public function misSolicitudes(Request $request){
-        $solicitudes = Solicitud::join('servicios','servicios.id','=','solicituds.servicio_id')
-                    ->join('solicitudes_fechas','solicitudes_fechas.solicitud_id','=','solicituds.id')
-                    ->join('users','users.id','=','solicituds.user_id')
-                    ->where('servicios.user_id','=',$request->user()->id)        
-                    ->get();
+
+        $user = $request->user();    
+        $rol = UsersRol::where('user_id',$user->id)->first();
+        $user->rol_id = $rol->rol_id;
+
+        $solicitudes = Solicitud::MisSolicitudes($request->user()->id,$user->rol_id);
 
         return response()->json([
-            'solicitudes' => $solicitudes
+            'solicitudes' => $solicitudes,
+            'rol_id' => $user->rol_id
         ],200);
     }
 
